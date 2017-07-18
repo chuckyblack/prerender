@@ -1,18 +1,14 @@
-FROM node:latest
-MAINTAINER Magnet.me
-
-EXPOSE 3000
+FROM node:8-alpine
 
 RUN mkdir -p /usr/src/app
-RUN groupadd -r prerender && useradd -r -g prerender -d /usr/src/app prerender
-RUN chown prerender:prerender /usr/src/app
-
+RUN addgroup -S prerender && adduser -S -G prerender -h /usr/src/app prerender
 USER prerender
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app/
+COPY package.json ./
 RUN npm install
-COPY . /usr/src/app
+COPY server.js /usr/src/app
 
-CMD [ "npm", "start" ]
+EXPOSE 3000
+CMD ["npm", "start"]
 
