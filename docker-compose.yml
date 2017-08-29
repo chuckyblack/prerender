@@ -2,6 +2,7 @@ version: '2'
 services:
     prerender:
         build: "."
+        image: jaromirpufler/prerender
         restart: always
         ports:
             - "127.0.0.1:3000:3000"
