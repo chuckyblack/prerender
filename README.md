@@ -1,5 +1,9 @@
-[![Dependency Status](https://gemnasium.com/badges/github.com/Magnetme/prerender-docker.svg)](https://gemnasium.com/github.com/Magnetme/prerender-docker)
+Lightweight Prerender container built on Alpine Linux with Node and Headless Chrome.
 
-A simple Docker container which run a relatively recent Prerender instance.
-We use it @ [Magnet.me](https://magnet.me) to serve beautiful content to scrapers which do not understand Javascript (Facebook or Whatsapp for example).
+* Prerender 5.4.4
+* Chromium 68.0.3440.75-r0
+* Node 10.8.0
 
+Based on https://hub.docker.com/r/tvanro/prerender-alpine/
+
+In addition the prerender removes script tags.
